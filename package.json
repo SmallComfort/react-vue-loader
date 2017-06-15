@@ -1,13 +1,14 @@
 {
   "name": "react-vue-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vue single-file component loader for Webpack",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vuejs/vue-loader.git"
+    "url": "https://github.com/SmallComfort/react-vue-loader"
   },
   "keywords": [
+    "react",
     "vue",
     "webpack",
     "loader"
@@ -16,12 +17,12 @@
     "index.js",
     "lib"
   ],
-  "author": "Evan You",
+  "author": "ZC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vue-loader/issues"
+    "url": "https://github.com/SmallComfort/react-vue-loader/issues"
   },
-  "homepage": "https://github.com/vuejs/vue-loader",
+  "homepage": "https://github.com/SmallComfort/react-vue-loader",
   "scripts": {
     "lint": "eslint lib",
     "test": "eslint lib && mocha --slow 5000 --timeout 10000",
@@ -43,7 +44,7 @@
     "source-map": "^0.5.6",
     "vue-hot-reload-api": "^2.1.0",
     "vue-style-loader": "^3.0.0",
-    "react-vue-template-compiler": "^2.0.0",
+    "react-vue-template-compiler": "^0.0.1",
     "vue-template-es2015-compiler": "^1.2.2"
   },
   "peerDependencies": {
