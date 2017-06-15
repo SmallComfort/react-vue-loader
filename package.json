@@ -1,6 +1,6 @@
 {
-  "name": "vue-loader",
-  "version": "12.0.3",
+  "name": "react-vue-loader",
+  "version": "0.0.1",
   "description": "Vue single-file component loader for Webpack",
   "main": "index.js",
   "repository": {
@@ -29,7 +29,9 @@
     "docs:deploy": "bash ./docs/deploy.sh"
   },
   "dependencies": {
+    "change-case": "^3.0.1",
     "consolidate": "^0.14.0",
+    "fs-extra": "^3.0.1",
     "hash-sum": "^1.0.2",
     "js-beautify": "^1.6.3",
     "loader-utils": "^1.1.0",
@@ -41,11 +43,11 @@
     "source-map": "^0.5.6",
     "vue-hot-reload-api": "^2.1.0",
     "vue-style-loader": "^3.0.0",
+    "react-vue-template-compiler": "^2.0.0",
     "vue-template-es2015-compiler": "^1.2.2"
   },
   "peerDependencies": {
-    "css-loader": "*",
-    "vue-template-compiler": "^2.0.0"
+    "css-loader": "*"
   },
   "devDependencies": {
     "babel-core": "^6.8.0",
@@ -62,6 +64,7 @@
     "extract-text-webpack-plugin": "^2.0.0-rc.0",
     "file-loader": "^0.10.0",
     "inject-loader": "^2.0.0",
+    "js-beautify": "^1.6.12",
     "js-yaml": "^3.8.2",
     "jsdom": "^9.2.1",
     "marked": "^0.3.6",

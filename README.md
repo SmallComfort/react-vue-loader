@@ -1,23 +1,94 @@
-# vue-loader [![Build Status](https://circleci.com/gh/vuejs/vue-loader/tree/master.svg?style=shield)](https://circleci.com/gh/vuejs/vue-loader/tree/master) [![Windows Build status](https://ci.appveyor.com/api/projects/status/8cdonrkbg6m4k1tm/branch/master?svg=true)](https://ci.appveyor.com/project/yyx990803/vue-loader/branch/master) [![npm package](https://img.shields.io/npm/v/vue-loader.svg?maxAge=2592000)](https://www.npmjs.com/package/vue-loader)
+# react-vue-loader 
 
-> Vue.js component loader for [Webpack](http://webpack.github.io).
+A fork of vue-loader, use to compile the vue component into a react component.
 
-**NOTE: the master branch (9.0+) only works with Vue 2.x. For usage with Vue 1.x, see the [8.x branch](https://github.com/vuejs/vue-loader/tree/8.x).**
-
-It allows you to write your components in this format:
-
-![screenshot](http://blog.evanyou.me/images/vue-component.png)
-
-The best way to get started is with [vue-cli](https://github.com/vuejs/vue-cli):
-
-``` js
-npm install -g vue-cli
-vue init webpack-simple hello
-cd hello
-npm install
-npm run dev
+## Install
+```
+npm install --save-dev react-vue-loader
 ```
 
-This will setup a basic Webpack + `vue-loader` project for you, with `*.vue` files and hot-reloading working out of the box!
+## Usage
+One possible configuration is as follows:
+```javascript
+module: {
+  rules: [
+    {
+      test: /\.vue$/,
+      loader: 'react-vue-loader'
+    }
+  ]
+}
+```
+[demo]()
 
-For advanced `vue-loader` configuration, checkout the [documentation](https://vue-loader.vuejs.org).
+It supports almost all configurations of [vue-loader](https://vue-loader.vuejs.org). If you have used vue-loader, in most cases you only need to change your loader configuration ```loader: 'vue-loader'``` to ```loader: 'react-vue-loader'```. Refer to the [vue-loader](https://vue-loader.vuejs.org) for detailed configuration.
+
+### Some Difference
+
+* react-vue-loader does not support [custom blocks](https://vue-loader.vuejs.org/en/configurations/custom-blocks.html)
+
+* Use [react-hot-loader](https://github.com/gaearon/react-hot-loader) to achieve hot reload
+
+* react-vue-loader adds additional options: ```vue```, ```output```
+
+
+### Additional Options
+
+#### ```vue```
+* type: ```String```
+
+Used to import a global vue configuration. The loader will load the configuration and apply it to each vue component.
+
+```javascript
+// vue.config.js
+import Vue from 'react-vue';
+import Vuex from 'vuex';
+import VueMaterial from 'vue-material/src'
+
+Vue.use(Vuex);
+Vue.use(VueMaterial);
+
+export default Vue;
+```
+
+```javascript
+module: {
+  rules: [
+    {
+      test: /\.vue$/,
+      loader: 'react-vue-loader',
+      options: {
+        vue: './vue.config.js'
+      }
+    }
+  ]
+}
+```
+
+#### ```output```
+* type: ```[Boolean, String]```
+* default: ```false```
+
+> Be cautious, it just creates a file and can not remove the file later, when you may want to delete one by one.
+
+Set ```true``` to see how the vue code is compiled into the react code, which will generate four js files in the same directory. To customize the generated file name, set a string type for ```output```
+
+```javascript
+module: {
+  rules: [
+    {
+      test: /\.vue$/,
+      loader: 'react-vue-loader',
+      options: {
+        output: true
+        // output: 'custome-name'
+      }
+    }
+  ]
+}
+```
+
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
