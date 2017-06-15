@@ -19,7 +19,7 @@ module: {
   ]
 }
 ```
-[demo]()
+[demo](https://github.com/SmallComfort/react-vue-demo)
 
 It supports almost all configurations of [vue-loader](https://vue-loader.vuejs.org). If you have used vue-loader, in most cases you only need to change your loader configuration ```loader: 'vue-loader'``` to ```loader: 'react-vue-loader'```. Refer to the [vue-loader](https://vue-loader.vuejs.org) for detailed configuration.
 
