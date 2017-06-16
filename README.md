@@ -4,6 +4,7 @@ A fork of vue-loader, use to compile the vue component into a react component.
 
 ## Install
 ```
+npm install --save react-vue react-vue-helper
 npm install --save-dev react-vue-loader
 ```
 
