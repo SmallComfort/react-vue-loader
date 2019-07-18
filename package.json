@@ -49,7 +49,8 @@
     "vue-template-es2015-compiler": "^1.2.2"
   },
   "peerDependencies": {
-    "css-loader": "*"
+    "css-loader": "*",
+    "@babel/core": "*"
   },
   "devDependencies": {
     "babel-core": "^6.8.0",
